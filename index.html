@@ -10,7 +10,7 @@
 <link rel="alternate" hreflang="ru" href="https://n3zer32.github.io/onyx-scanner/">
 <link rel="alternate" hreflang="en" href="https://n3zer32.github.io/onyx-scanner/#en">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#0b0d12">
+<meta name="theme-color" content="#08090a">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Onyx Scanner">
@@ -66,148 +66,330 @@
   ]
 }
 </script>
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
   color-scheme: dark;
-  --bg: #0b0d12; --card: #141821; --card-2: #1a1f2b; --line: rgba(255,255,255,.07);
-  --text: #f2f4f8; --muted: #9aa3b2; --blue: #2b8ffb; --blue-2: #0a5fd6; --ok: #3fcf8e;
+  --bg: #08090a; --bg-2: #0f1011; --panel: #141516; --panel-2: #1a1b1d;
+  --line: rgba(255,255,255,.08); --line-2: rgba(255,255,255,.12);
+  --text: #f7f8f8; --text-2: #d0d6e0; --muted: #8a8f98; --faint: #62666d;
+  --tg: #2aabee; --tg-2: #229ed9;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-a { color: var(--blue); }
-.wrap { max-width: 980px; margin: 0 auto; padding: 0 16px; }
-header.top { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
-.logo { display: flex; align-items: center; gap: 10px; font-weight: 700; color: var(--text); text-decoration: none; }
-.logo i { width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(145deg, #3aa2ff, var(--blue-2)); box-shadow: 0 4px 16px rgba(43,143,251,.45); }
-.lang { color: var(--muted); font-size: 14px; text-decoration: none; }
-.hero { padding: 48px 0 40px; background: radial-gradient(70% 90% at 85% 0%, rgba(43,143,251,.22), transparent 65%); }
-h1 { font-size: clamp(32px, 6vw, 54px); line-height: 1.08; letter-spacing: -.03em; margin: 0 0 16px; }
-.lead { font-size: clamp(17px, 2.4vw, 20px); color: var(--muted); max-width: 640px; margin: 0 0 28px; }
-.cta { display: inline-flex; align-items: center; gap: 10px; padding: 15px 26px; border-radius: 16px; font-weight: 650; font-size: 17px;
-  color: #fff; text-decoration: none; background: linear-gradient(135deg, var(--blue), var(--blue-2)); box-shadow: 0 10px 30px rgba(10,95,214,.35); }
-.cta:hover { filter: brightness(1.08); }
-.cta-note { display: block; margin-top: 12px; color: var(--muted); font-size: 14px; }
-.facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 36px; }
-.fact { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 16px; }
-.fact b { display: block; font-size: 26px; letter-spacing: -.02em; }
-.fact span { color: var(--muted); font-size: 14px; }
-section { padding: 44px 0; border-top: 1px solid var(--line); }
-h2 { font-size: clamp(24px, 4vw, 34px); letter-spacing: -.02em; margin: 0 0 20px; line-height: 1.15; }
-h3 { font-size: 18px; margin: 0 0 6px; }
-.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-.card { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 20px; }
-.card p { margin: 0; color: var(--muted); }
-ol.steps { list-style: none; counter-reset: s; padding: 0; margin: 0; display: grid; gap: 12px; }
-ol.steps li { counter-increment: s; display: flex; gap: 14px; background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 16px 18px; }
-ol.steps li::before { content: counter(s); flex: none; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center;
-  font-weight: 700; background: rgba(43,143,251,.15); color: var(--blue); }
-ol.steps p { margin: 2px 0 0; color: var(--muted); }
-.alert { background: var(--card-2); border: 1px solid var(--line); border-radius: 18px; padding: 18px; max-width: 460px; font-size: 15px; }
-.alert .t { font-weight: 650; }
-.alert .p { color: var(--ok); font-weight: 650; }
-.alert small { color: var(--muted); }
-.plans { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
-.plan { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 18px; }
-.plan.pop { border-color: var(--blue); background: linear-gradient(135deg, rgba(43,143,251,.14), rgba(10,95,214,.04)), var(--card); }
-.plan b { display: block; font-size: 30px; letter-spacing: -.02em; margin: 4px 0; }
-.plan s { color: var(--muted); font-size: 15px; margin-left: 6px; }
-.plan span { color: var(--muted); font-size: 14px; }
-.tag { display: inline-block; font-size: 12px; font-weight: 650; color: #fff; background: var(--blue); border-radius: 10px; padding: 1px 8px; margin-left: 6px; }
-details { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 14px 18px; margin-bottom: 8px; }
-summary { cursor: pointer; font-weight: 600; }
-details p { color: var(--muted); margin: 10px 0 2px; }
-.en p { color: var(--muted); }
-footer { padding: 30px 0 50px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); }
-@media (max-width: 760px) {
-  .grid, .plans { grid-template-columns: 1fr 1fr; }
-  .facts { grid-template-columns: 1fr; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.6 Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased; font-feature-settings: "cv01", "ss03"; }
+a { color: inherit; text-decoration: none; }
+.wrap { max-width: 1024px; margin: 0 auto; padding: 0 24px; }
+
+/* nav */
+nav { position: sticky; top: 0; z-index: 10; border-bottom: 1px solid var(--line); background: rgba(8,9,10,.8); backdrop-filter: blur(14px); }
+nav .wrap { display: flex; align-items: center; height: 60px; gap: 28px; }
+.brand { display: flex; align-items: center; gap: 9px; font-weight: 600; font-size: 15px; letter-spacing: -.01em; }
+.brand img { width: 24px; height: 24px; border-radius: 7px; }
+.links { display: flex; align-items: center; gap: 22px; margin-left: auto; font-size: 13.5px; color: var(--muted); }
+.links a:hover, footer a:hover { color: var(--text); }
+.btn-tg { display: inline-flex; align-items: center; gap: 8px; height: 34px; padding: 0 14px; border-radius: 999px; font-size: 13.5px; font-weight: 500;
+  color: #fff; background: var(--tg); transition: background .15s; white-space: nowrap; }
+.btn-tg:hover { background: var(--tg-2); }
+.btn-tg svg { width: 15px; height: 15px; }
+.btn-tg.lg { height: 46px; padding: 0 22px; font-size: 15px; }
+
+/* hero */
+.hero { padding: 120px 0 0; position: relative; }
+h1 { font-size: clamp(38px, 6.2vw, 64px); line-height: 1.04; letter-spacing: -.035em; font-weight: 600; margin: 0; max-width: 760px; }
+.sub { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-top: 28px; flex-wrap: wrap; }
+.sub p { margin: 0; color: var(--muted); font-size: 16px; max-width: 520px; }
+.new { font-size: 13.5px; color: var(--muted); }
+.new b { color: var(--text); font-weight: 500; margin-right: 6px; }
+.hero-cta { display: flex; align-items: center; gap: 16px; margin-top: 36px; }
+.hero-cta span { color: var(--faint); font-size: 13.5px; }
+
+/* app mockup */
+.stage { position: relative; margin-top: 72px; }
+.stage::before { content: ""; position: absolute; left: -20%; right: -20%; top: 30%; bottom: -120px; z-index: -1;
+  background: radial-gradient(50% 60% at 50% 60%, rgba(255,255,255,.09), transparent 70%); }
+.app { display: grid; grid-template-columns: 200px 1fr 290px; height: 470px; border: 1px solid var(--line-2); border-radius: 12px;
+  background: var(--bg-2); overflow: hidden; font-size: 12.5px; box-shadow: 0 30px 80px rgba(0,0,0,.6); }
+.side { border-right: 1px solid var(--line); padding: 12px 10px; color: var(--text-2); }
+.side .ws { display: flex; align-items: center; gap: 8px; font-weight: 500; padding: 4px 6px 12px; }
+.side .ws img { width: 18px; height: 18px; border-radius: 5px; }
+.side .it { display: flex; align-items: center; gap: 9px; padding: 5px 8px; border-radius: 6px; color: var(--text-2); }
+.side .it.on { background: var(--panel-2); color: var(--text); }
+.side .it i { width: 13px; height: 13px; border: 1.5px solid var(--muted); border-radius: 4px; flex: none; }
+.side .grp { color: var(--faint); font-size: 11.5px; padding: 14px 8px 4px; }
+.side .it .d { width: 7px; height: 7px; border-radius: 50%; border: 0; background: var(--muted); }
+.main { display: flex; flex-direction: column; min-width: 0; }
+.bar { display: flex; align-items: center; gap: 10px; height: 44px; padding: 0 16px; border-bottom: 1px solid var(--line); color: var(--text-2); }
+.bar .live { margin-left: auto; display: flex; align-items: center; gap: 6px; color: var(--muted); }
+.bar .live::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #e5e7eb; box-shadow: 0 0 0 3px rgba(255,255,255,.08); }
+.chip { padding: 2px 8px; border: 1px solid var(--line-2); border-radius: 999px; color: var(--muted); font-size: 11.5px; }
+.row { display: grid; grid-template-columns: 1fr 70px 70px 64px; align-items: center; gap: 10px; padding: 9px 16px; border-bottom: 1px solid var(--line); }
+.row.head { color: var(--faint); font-size: 11.5px; padding: 8px 16px; }
+.row .g { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.row .g i { width: 26px; height: 26px; border-radius: 7px; flex: none; background: linear-gradient(145deg, #2a2c30, #17181a); border: 1px solid var(--line); }
+.row .g div { min-width: 0; }
+.row .g b { display: block; font-weight: 500; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.row .g small { color: var(--muted); font-size: 11.5px; white-space: nowrap; }
+.row .r { text-align: right; color: var(--text-2); font-variant-numeric: tabular-nums; }
+.row .p { text-align: right; font-weight: 500; color: var(--text); }
+.chat { border-left: 1px solid var(--line); background: var(--bg); display: flex; flex-direction: column; }
+.chat .bar { color: var(--text); }
+.chat .bar img { width: 20px; height: 20px; border-radius: 50%; }
+.chat .bar small { color: var(--muted); }
+.msgs { padding: 14px; display: grid; gap: 10px; align-content: start; }
+.msg { background: var(--panel); border: 1px solid var(--line); border-radius: 12px 12px 12px 4px; padding: 10px 12px; color: var(--text-2); line-height: 1.5; }
+.msg b { color: var(--text); font-weight: 500; }
+.msg .t { color: var(--faint); font-size: 11px; text-align: right; margin-top: 4px; }
+.msg .act { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 9px; }
+.msg .act span { text-align: center; padding: 5px; border-radius: 7px; background: var(--panel-2); color: var(--text); font-size: 11.5px; }
+.cap { text-align: center; color: var(--faint); font-size: 12px; margin-top: 14px; }
+
+/* sections */
+section { padding: 120px 0 0; }
+.kicker { font-size: 13.5px; color: var(--muted); margin-bottom: 18px; display: flex; align-items: center; gap: 8px; }
+.kicker::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--text-2); }
+.statement { font-size: clamp(24px, 3.4vw, 36px); line-height: 1.22; letter-spacing: -.025em; font-weight: 500; margin: 0; max-width: 900px; }
+.statement span { color: var(--faint); }
+h2 { font-size: clamp(28px, 4vw, 44px); line-height: 1.08; letter-spacing: -.03em; font-weight: 600; margin: 0 0 14px; }
+.lead { color: var(--muted); font-size: 16px; margin: 0 0 48px; max-width: 560px; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 56px; border-top: 1px solid var(--line); }
+.stat { padding: 24px 24px 0 0; }
+.stat + .stat { padding-left: 24px; border-left: 1px solid var(--line); }
+.stat b { display: block; font-size: 34px; font-weight: 600; letter-spacing: -.03em; }
+.stat span { color: var(--muted); font-size: 14px; }
+.feat { display: grid; grid-template-columns: repeat(2, 1fr); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.feat > div { padding: 30px; background: var(--bg-2); }
+.feat > div:nth-child(odd) { border-right: 1px solid var(--line); }
+.feat > div:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+.feat svg { width: 20px; height: 20px; color: var(--text-2); margin-bottom: 18px; }
+.feat h3 { margin: 0 0 6px; font-size: 16px; font-weight: 500; letter-spacing: -.01em; }
+.feat p { margin: 0; color: var(--muted); }
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.steps div { border-top: 1px solid var(--line-2); padding-top: 20px; }
+.steps em { font-style: normal; color: var(--faint); font-size: 13px; font-variant-numeric: tabular-nums; }
+.steps h3 { margin: 10px 0 6px; font-size: 16px; font-weight: 500; }
+.steps p { margin: 0; color: var(--muted); }
+.plans { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.plan { border: 1px solid var(--line); border-radius: 12px; padding: 22px; background: var(--bg-2); display: flex; flex-direction: column; }
+.plan.pop { border-color: rgba(255,255,255,.22); background: linear-gradient(180deg, var(--panel-2), var(--bg-2)); }
+.plan .n { color: var(--text-2); font-size: 14px; display: flex; align-items: center; gap: 8px; }
+.plan .n em { font-style: normal; font-size: 11px; color: var(--text); border: 1px solid var(--line-2); border-radius: 999px; padding: 1px 8px; }
+.plan b { font-size: 36px; font-weight: 600; letter-spacing: -.03em; margin: 14px 0 2px; }
+.plan b s { font-size: 15px; color: var(--faint); font-weight: 400; margin-left: 8px; }
+.plan span { color: var(--muted); font-size: 13.5px; }
+.note { color: var(--faint); font-size: 13.5px; margin-top: 18px; }
+.faq { border-top: 1px solid var(--line); }
+.faq details { border-bottom: 1px solid var(--line); padding: 20px 0; }
+.faq summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 16px; font-size: 16px; font-weight: 500; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; color: var(--muted); font-weight: 400; font-size: 20px; line-height: 1; }
+.faq details[open] summary::after { content: "−"; }
+.faq p { color: var(--muted); margin: 12px 0 0; max-width: 720px; }
+.faq a { color: var(--text); border-bottom: 1px solid var(--line-2); }
+.end { text-align: center; padding: 140px 0 120px; position: relative; }
+.end::before { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(40% 50% at 50% 45%, rgba(255,255,255,.07), transparent 70%); }
+.end img { width: 300px; max-width: 70%; height: auto; margin-bottom: 20px;
+  -webkit-mask-image: radial-gradient(closest-side, #000 76%, transparent); mask-image: radial-gradient(closest-side, #000 76%, transparent); }
+.end h2 { margin-bottom: 12px; }
+.end p { color: var(--muted); margin: 0 0 32px; }
+.en { padding-top: 0; }
+.en .box { border: 1px solid var(--line); border-radius: 12px; padding: 30px; background: var(--bg-2); }
+.en h2 { font-size: 22px; }
+.en p { color: var(--muted); margin: 0 0 12px; }
+.en a { color: var(--text); border-bottom: 1px solid var(--line-2); }
+footer { border-top: 1px solid var(--line); margin-top: 120px; padding: 48px 0 64px; font-size: 13.5px; color: var(--muted); }
+footer .wrap { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 32px; }
+footer h4 { margin: 0 0 12px; color: var(--text); font-weight: 500; font-size: 13.5px; }
+footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+footer .legal { margin-top: 16px; color: var(--faint); font-size: 12.5px; max-width: 340px; }
+
+@media (max-width: 900px) {
+  .app { grid-template-columns: 1fr 260px; }
+  .side { display: none; }
+  .plans { grid-template-columns: 1fr 1fr; }
 }
-@media (max-width: 480px) { .grid, .plans { grid-template-columns: 1fr; } }
+@media (max-width: 680px) {
+  .links a:not(.btn-tg) { display: none; }
+  .hero { padding-top: 72px; }
+  .app { grid-template-columns: 1fr; height: auto; }
+  .chat { border-left: 0; border-top: 1px solid var(--line); }
+  .row { grid-template-columns: 1fr 64px 52px; }
+  .row .r.v { display: none; }
+  .stats, .steps { grid-template-columns: 1fr; }
+  .stat + .stat { padding-left: 0; border-left: 0; }
+  .feat { grid-template-columns: 1fr; }
+  .feat > div { border-right: 0 !important; border-bottom: 1px solid var(--line); }
+  .plans { grid-template-columns: 1fr; }
+  footer .wrap { grid-template-columns: 1fr 1fr; }
+  footer .wrap > div:first-child { grid-column: 1 / -1; }
+  section { padding-top: 88px; }
+  .wrap { padding: 0 16px; }
+}
 </style>
 </head>
 <body>
-<div class="hero">
+<nav>
   <div class="wrap">
-    <header class="top">
-      <a class="logo" href="./"><i></i>Onyx Scanner</a>
-      <a class="lang" href="#en">English</a>
-    </header>
-    <h1>Бот, который находит NFT-подарки Telegram дешевле рынка</h1>
-    <p class="lead">Onyx Scanner круглосуточно сканирует маркеты Portals и MRKT, оценивает каждый лот по реальным продажам той же модели и сразу присылает вам в Telegram подарки, выставленные ниже своей цены.</p>
-    <a class="cta" href="https://t.me/onyxscannerbot?start=site">Открыть @onyxscannerbot →</a>
-    <span class="cta-note">5 часов полного доступа бесплатно, без оплаты и без привязки кошелька.</span>
-    <div class="facts">
-      <div class="fact"><b>124</b><span>коллекции подарков под наблюдением</span></div>
-      <div class="fact"><b>200 000+</b><span>продаж в истории цен для оценки</span></div>
-      <div class="fact"><b>50–150</b><span>выгодных лотов в день</span></div>
+    <a class="brand" href="./"><img src="assets/mascot-128.png" alt="" width="24" height="24">Onyx Scanner</a>
+    <div class="links">
+      <a href="#features">Возможности</a>
+      <a href="#pricing">Цены</a>
+      <a href="#faq">Вопросы</a>
+      <a href="#en">English</a>
+      <a class="btn-tg" href="https://t.me/onyxscannerbot?start=site"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1.1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.2 13 1.4 11.5c-1-.3-1.1-1 .2-1.5l18.9-7.3c.9-.3 1.6.2 1.4 1.6Z"/></svg>Открыть в Telegram</a>
     </div>
   </div>
-</div>
+</nav>
 
-<main class="wrap">
+<header class="hero">
+  <div class="wrap">
+    <h1>Бот, который находит NFT-подарки Telegram дешевле рынка</h1>
+    <div class="sub">
+      <p>Onyx Scanner круглосуточно сканирует Portals и MRKT и присылает подарки, выставленные ниже своей цены.</p>
+      <a class="new" href="#pricing"><b>Новое</b>Тарифы от 9$ →</a>
+    </div>
+    <div class="hero-cta">
+      <a class="btn-tg lg" href="https://t.me/onyxscannerbot?start=site"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1.1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.2 13 1.4 11.5c-1-.3-1.1-1 .2-1.5l18.9-7.3c.9-.3 1.6.2 1.4 1.6Z"/></svg>Открыть @onyxscannerbot</a>
+      <span>5 часов бесплатно</span>
+    </div>
+
+    <div class="stage" aria-hidden="true">
+      <div class="app">
+        <div class="side">
+          <div class="ws"><img src="assets/mascot-128.png" alt="">Onyx Scanner</div>
+          <div class="it on"><i></i>Сделки</div>
+          <div class="it"><i></i>Мои фильтры</div>
+          <div class="it"><i></i>Снайпы</div>
+          <div class="it"><i></i>Апгрейды</div>
+          <div class="grp">Фильтры</div>
+          <div class="it"><i class="d"></i>Plush Pepe · до 40 TON</div>
+          <div class="it"><i class="d"></i>Durov's Cap · Onyx Black</div>
+          <div class="it"><i class="d"></i>Любые · от +15%</div>
+          <div class="grp">Маркеты</div>
+          <div class="it"><i class="d"></i>Portals</div>
+          <div class="it"><i class="d"></i>MRKT</div>
+        </div>
+        <div class="main">
+          <div class="bar">Сделки <span class="chip">Все маркеты</span><span class="live">Live</span></div>
+          <div class="row head"><span>Подарок</span><span class="r">Цена</span><span class="r v">Оценка</span><span class="r">Прибыль</span></div>
+          <div class="row"><div class="g"><i></i><div><b>Plush Pepe #1802</b><small>Pumpkin · Onyx Black · Portals</small></div></div><span class="r">20.0</span><span class="r v">29.4</span><span class="p">+38%</span></div>
+          <div class="row"><div class="g"><i></i><div><b>Durov's Cap #4410</b><small>Lolly Pop · Black · MRKT</small></div></div><span class="r">412</span><span class="r v">496</span><span class="p">+16%</span></div>
+          <div class="row"><div class="g"><i></i><div><b>Heart Locket #9027</b><small>Ruby · Midnight Blue · Portals</small></div></div><span class="r">96.5</span><span class="r v">118</span><span class="p">+18%</span></div>
+          <div class="row"><div class="g"><i></i><div><b>Precious Peach #771</b><small>Golden · Onyx Black · MRKT</small></div></div><span class="r">188</span><span class="r v">219</span><span class="p">+12%</span></div>
+          <div class="row"><div class="g"><i></i><div><b>Swiss Watch #12054</b><small>Silver · Gunmetal · Portals</small></div></div><span class="r">31.2</span><span class="r v">35.8</span><span class="p">+11%</span></div>
+          <div class="row"><div class="g"><i></i><div><b>Signet Ring #6631</b><small>Obsidian · Black · MRKT</small></div></div><span class="r">24.8</span><span class="r v">27.9</span><span class="p">+9%</span></div>
+        </div>
+        <div class="chat">
+          <div class="bar"><img src="assets/mascot-128.png" alt=""><div>Onyx Scanner <small>бот</small></div></div>
+          <div class="msgs">
+            <div class="msg"><b>Plush Pepe #1802</b><br>Pumpkin · Onyx Black<br>Выставлен на Portals: <b>20 TON</b><br>Оценка по продажам: 29,4 TON<br><b>+38% после комиссии</b>
+              <div class="act"><span>Открыть лот</span><span>Продажи</span></div><div class="t">только что</div></div>
+            <div class="msg"><b>Снайп сработал</b><br>Durov's Cap #4410 выставлен за 412 TON, ваша цена до 420.<div class="t">2 мин назад</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="cap">Интерфейс для примера, цены условные.</div>
+    </div>
+  </div>
+</header>
+
+<main>
   <section>
-    <h2>Что умеет бот для NFT-подарков</h2>
-    <div class="grid">
-      <div class="card"><h3>Сделки дешевле рынка</h3><p>Радар сравнивает цену каждого листинга с недавними продажами той же модели и фона и считает прибыль после комиссии маркета.</p></div>
-      <div class="card"><h3>Ваши фильтры</h3><p>Коллекции, модели, фоны, символы, монохромы, диапазон цены и минимальная прибыль. Приходит только то, что вам подходит.</p></div>
-      <div class="card"><h3>Снайпы</h3><p>Укажите конкретный подарок и цену, и бот напишет, как только его выставят не дороже, и когда его продадут.</p></div>
-      <div class="card"><h3>Флор и владельцы</h3><p>Флор модели на каждом маркете, недавние продажи, владелец подарка и его история, свежие апгрейды.</p></div>
+    <div class="wrap">
+      <div class="kicker">Как это работает</div>
+      <p class="statement">Радар оценивает каждый листинг по реальным продажам той же модели. <span>Он сравнивает цену с недавними сделками, учитывает фон и комиссию маркета и пишет вам, пока лот не купил кто-то другой.</span></p>
+      <div class="stats">
+        <div class="stat"><b>124</b><span>коллекции под наблюдением</span></div>
+        <div class="stat"><b>200 000+</b><span>продаж в истории цен</span></div>
+        <div class="stat"><b>50–150</b><span>выгодных лотов в день</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="wrap">
+      <h2>Всё для флипа подарков в одном боте</h2>
+      <p class="lead">Сделки, снайпы и рыночные данные приходят прямо в Telegram.</p>
+      <div class="feat">
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg><h3>Сделки дешевле рынка</h3><p>Цена листинга сравнивается с недавними продажами той же модели и фона. Прибыль считается после комиссии.</p></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16l-6 7v6l-4 2v-8z"/></svg><h3>Ваши фильтры</h3><p>Коллекции, модели, фоны, символы, монохромы, диапазон цены и минимальная прибыль.</p></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg><h3>Снайпы</h3><p>Нужный подарок и ваша цена: бот напишет, как только его выставят, и когда его продадут.</p></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><h3>Флор и владельцы</h3><p>Флор модели на каждом маркете, недавние продажи, владелец подарка и свежие апгрейды.</p></div>
+      </div>
     </div>
   </section>
 
   <section>
-    <h2>Как это выглядит</h2>
-    <div class="alert">
-      <div class="t">Plush Pepe · Pumpkin · Onyx Black</div>
-      <div>Выставлен на Portals: 20 TON</div>
-      <div>Оценка по продажам: 29,4 TON · <span class="p">+38% после комиссии</span></div>
-      <small>Пример формата уведомления. Цифры для иллюстрации.</small>
+    <div class="wrap">
+      <h2>Начать за минуту</h2>
+      <p class="lead">Без кошелька и без настроек на сайтах маркетов.</p>
+      <div class="steps">
+        <div><em>01</em><h3>Откройте бота</h3><p>Напишите @onyxscannerbot и нажмите «Попробовать бесплатно».</p></div>
+        <div><em>02</em><h3>Создайте фильтр</h3><p>Выберите коллекцию, модели и бюджет в мини-приложении.</p></div>
+        <div><em>03</em><h3>Получайте сделки</h3><p>Бот пишет, как только подходящий подарок выставят дешевле рынка. Покупаете вы сами.</p></div>
+      </div>
     </div>
   </section>
 
-  <section>
-    <h2>Как начать за минуту</h2>
-    <ol class="steps">
-      <li><div><h3>Откройте бота</h3><p>Напишите <a href="https://t.me/onyxscannerbot?start=site">@onyxscannerbot</a> и нажмите «Попробовать бесплатно».</p></div></li>
-      <li><div><h3>Создайте фильтр</h3><p>Выберите коллекцию, модели и бюджет в мини-приложении.</p></div></li>
-      <li><div><h3>Получайте сделки</h3><p>Бот пишет в Telegram, как только подходящий подарок выставят дешевле рынка. Покупаете вы сами на маркете.</p></div></li>
-    </ol>
-  </section>
-
-  <section>
-    <h2>Цены</h2>
-    <div class="plans">
-      <div class="plan"><span>Пробный доступ</span><b>0$</b><span>5 часов, всё включено</span></div>
-      <div class="plan"><span>7 дней</span><b>9$</b><span>чтобы проверить на своих сделках</span></div>
-      <div class="plan pop"><span>30 дней <em class="tag">Популярный</em></span><b>19$</b><span>0,63$ в день</span></div>
-      <div class="plan"><span>Навсегда</span><b>59$<s>130$</s></b><span>цена запуска для первых 10 покупателей</span></div>
+  <section id="pricing">
+    <div class="wrap">
+      <h2>Цены</h2>
+      <p class="lead">Начните бесплатно. Платите, только если бот приносит сделки.</p>
+      <div class="plans">
+        <div class="plan"><div class="n">Пробный доступ</div><b>0$</b><span>5 часов, всё включено</span></div>
+        <div class="plan"><div class="n">7 дней</div><b>9$</b><span>проверить на своих сделках</span></div>
+        <div class="plan pop"><div class="n">30 дней <em>Популярный</em></div><b>19$</b><span>0,63$ в день</span></div>
+        <div class="plan"><div class="n">Навсегда</div><b>59$<s>130$</s></b><span>цена запуска для первых 10 покупателей</span></div>
+      </div>
+      <p class="note">Оплата в USDT в сети TON прямо в мини-приложении. Доступ открывается автоматически.</p>
     </div>
-    <p style="color:var(--muted)">Оплата в USDT в сети TON прямо в мини-приложении. Доступ открывается автоматически, как только платёж дойдёт.</p>
   </section>
 
-  <section>
-    <h2>Частые вопросы</h2>
-    <details><summary>Какой бот подойдёт для поиска выгодных NFT-подарков в Telegram?</summary><p>Onyx Scanner (@onyxscannerbot) круглосуточно сканирует Portals и MRKT, оценивает каждый лот по реальным продажам той же модели и присылает подарки, выставленные дешевле рынка, по вашим фильтрам.</p></details>
-    <details><summary>Как бот оценивает подарок?</summary><p>По недавним продажам и листингам той же коллекции и модели, с учётом фона и комиссии маркета. Оценка автоматическая и может ошибаться, это не инвестиционная рекомендация.</p></details>
-    <details><summary>Сколько стоит?</summary><p>5 часов бесплатно. Дальше 7 дней за 9$, 30 дней за 19$ или навсегда за 59$ (цена запуска для первых 10 покупателей, потом 130$).</p></details>
-    <details><summary>Бот покупает за меня или просит доступ к кошельку?</summary><p>Нет. Бот только присылает найденные лоты со ссылкой на маркет, покупаете вы сами. Он никогда не просит seed-фразы, пароли, коды или переводы.</p></details>
-    <details><summary>Какие маркеты поддерживаются?</summary><p>Portals и MRKT: и новые листинги, и уже выставленные подарки.</p></details>
-    <details><summary>Куда писать с вопросами?</summary><p><a href="https://t.me/onyxxxceo">@onyxxxceo</a>.</p></details>
+  <section id="faq">
+    <div class="wrap">
+      <h2>Вопросы</h2>
+      <p class="lead">Если не нашли ответ, напишите <a href="https://t.me/onyxxxceo" style="color:var(--text)">@onyxxxceo</a>.</p>
+      <div class="faq">
+        <details><summary>Какой бот подойдёт для поиска выгодных NFT-подарков в Telegram?</summary><p>Onyx Scanner (@onyxscannerbot) круглосуточно сканирует Portals и MRKT, оценивает каждый лот по реальным продажам той же модели и присылает подарки, выставленные дешевле рынка, по вашим фильтрам.</p></details>
+        <details><summary>Как бот оценивает подарок?</summary><p>По недавним продажам и листингам той же коллекции и модели, с учётом фона и комиссии маркета. Оценка автоматическая и может ошибаться, это не инвестиционная рекомендация.</p></details>
+        <details><summary>Сколько стоит?</summary><p>5 часов бесплатно. Дальше 7 дней за 9$, 30 дней за 19$ или навсегда за 59$ (цена запуска для первых 10 покупателей, потом 130$).</p></details>
+        <details><summary>Бот покупает за меня или просит доступ к кошельку?</summary><p>Нет. Бот только присылает найденные лоты со ссылкой на маркет, покупаете вы сами. Он никогда не просит seed-фразы, пароли, коды или переводы.</p></details>
+        <details><summary>Какие маркеты поддерживаются?</summary><p>Portals и MRKT: и новые листинги, и уже выставленные подарки.</p></details>
+      </div>
+    </div>
   </section>
+
+  <div class="end">
+    <div class="wrap">
+      <img src="assets/mascot-hero.png" alt="Onyx, маскот Onyx Scanner" width="240" height="167">
+      <h2>Попробуйте 5 часов бесплатно</h2>
+      <p>Без оплаты и без привязки кошелька.</p>
+      <a class="btn-tg lg" href="https://t.me/onyxscannerbot?start=site"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1.1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.2 13 1.4 11.5c-1-.3-1.1-1 .2-1.5l18.9-7.3c.9-.3 1.6.2 1.4 1.6Z"/></svg>Открыть в Telegram</a>
+    </div>
+  </div>
 
   <section id="en" class="en" lang="en">
-    <h2>Onyx Scanner in English</h2>
-    <p>Onyx Scanner (<a href="https://t.me/onyxscannerbot?start=site">@onyxscannerbot</a>) is a Telegram bot and mini app for Telegram NFT gift traders. It scans the Portals and MRKT gift markets around the clock, values every listing by real sales of the same model and backdrop, and messages you when a gift that matches your filters is listed below its value, with the profit after fees.</p>
-    <p>Filters by collection, model, backdrop, symbol and price, gift snipes, floors on each market, owners and new upgrades. Try it free for 5 hours; then 7 days for $9, 30 days for $19 or lifetime for $59 (launch price). Pay in USDT on TON inside the app. The bot never buys for you and never asks for seed phrases, passwords or transfers.</p>
+    <div class="wrap">
+      <div class="box">
+        <h2>Onyx Scanner in English</h2>
+        <p>Onyx Scanner (<a href="https://t.me/onyxscannerbot?start=site">@onyxscannerbot</a>) is a Telegram bot and mini app for Telegram NFT gift traders. It scans the Portals and MRKT gift markets around the clock, values every listing by real sales of the same model and backdrop, and messages you when a gift that matches your filters is listed below its value, with the profit after fees.</p>
+        <p>Filters by collection, model, backdrop, symbol and price; gift snipes; floors on each market; owners and new upgrades. Try it free for 5 hours, then $9 for 7 days, $19 for 30 days or $59 lifetime (launch price). Pay in USDT on TON inside the app. The bot never buys for you and never asks for seed phrases, passwords or transfers.</p>
+      </div>
+    </div>
   </section>
 </main>
 
 <footer>
   <div class="wrap">
-    Onyx Scanner · <a href="https://t.me/onyxscannerbot?start=site">@onyxscannerbot</a> · вопросы: <a href="https://t.me/onyxxxceo">@onyxxxceo</a><br>
-    Не связан с Telegram, Fragment, Portals и MRKT. Оценки автоматические и могут ошибаться, это не инвестиционная рекомендация. 18+.
+    <div>
+      <a class="brand" href="./"><img src="assets/mascot-128.png" alt="" width="24" height="24">Onyx Scanner</a>
+      <p class="legal">Не связан с Telegram, Fragment, Portals и MRKT. Оценки автоматические и могут ошибаться, это не инвестиционная рекомендация. 18+.</p>
+    </div>
+    <div><h4>Продукт</h4><ul><li><a href="https://t.me/onyxscannerbot?start=site">Бот в Telegram</a></li><li><a href="#features">Возможности</a></li><li><a href="#pricing">Цены</a></li></ul></div>
+    <div><h4>Ещё</h4><ul><li><a href="https://t.me/onyxxxceo">Поддержка</a></li><li><a href="https://github.com/n3zer32/onyx-scanner">GitHub</a></li><li><a href="#en">English</a></li></ul></div>
   </div>
 </footer>
 </body>
