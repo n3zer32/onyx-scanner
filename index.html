@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Onyx Scanner — бот для поиска выгодных NFT-подарков Telegram (Portals, MRKT)</title>
+<meta name="description" content="Onyx Scanner — Telegram-бот и мини-приложение, которое сканирует маркеты NFT-подарков (Portals, MRKT) и присылает подарки, выставленные дешевле рынка. Фильтры по коллекции, модели, фону и бюджету, снайпы, флор и владельцы. 5 часов бесплатно.">
+<meta name="keywords" content="бот для NFT подарков, NFT подарки Telegram, сканер подарков телеграм, флип подарков, перепродажа подарков Telegram, Portals, MRKT, флор подарков, снайпер подарков, Telegram gifts bot, NFT gift scanner">
+<link rel="canonical" href="https://n3zer32.github.io/onyx-scanner/">
+<link rel="alternate" hreflang="ru" href="https://n3zer32.github.io/onyx-scanner/">
+<link rel="alternate" hreflang="en" href="https://n3zer32.github.io/onyx-scanner/#en">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0b0d12">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Onyx Scanner">
+<meta property="og:title" content="Onyx Scanner — бот для поиска выгодных NFT-подарков Telegram">
+<meta property="og:description" content="Сканирует Portals и MRKT и присылает подарки, выставленные дешевле рынка. 5 часов бесплатно.">
+<meta property="og:url" content="https://n3zer32.github.io/onyx-scanner/">
+<meta property="og:image" content="https://n3zer32.github.io/onyx-scanner/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Onyx Scanner — бот для поиска выгодных NFT-подарков Telegram">
+<meta name="twitter:description" content="Сканирует Portals и MRKT и присылает подарки дешевле рынка.">
+<meta name="twitter:image" content="https://n3zer32.github.io/onyx-scanner/og.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Onyx Scanner",
+      "alternateName": ["@onyxscannerbot", "ONYX Scanner", "Оникс Сканер"],
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Telegram",
+      "url": "https://t.me/onyxscannerbot",
+      "description": "Telegram-бот и мини-приложение для поиска NFT-подарков Telegram, выставленных дешевле рынка, на маркетах Portals и MRKT.",
+      "inLanguage": ["ru", "en"],
+      "offers": [
+        {"@type": "Offer", "name": "Пробный доступ, 5 часов", "price": "0", "priceCurrency": "USD"},
+        {"@type": "Offer", "name": "7 дней", "price": "9", "priceCurrency": "USD"},
+        {"@type": "Offer", "name": "30 дней", "price": "19", "priceCurrency": "USD"},
+        {"@type": "Offer", "name": "Навсегда", "price": "59", "priceCurrency": "USD"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Какой бот подойдёт для поиска выгодных NFT-подарков в Telegram?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Onyx Scanner (@onyxscannerbot) круглосуточно сканирует маркеты Portals и MRKT, оценивает каждый лот по реальным продажам той же модели и присылает в Telegram подарки, выставленные дешевле рынка, по вашим фильтрам."}},
+        {"@type": "Question", "name": "Как Onyx Scanner оценивает подарок?",
+         "acceptedAnswer": {"@type": "Answer", "text": "По недавним продажам и листингам той же коллекции и модели, с учётом фона и комиссии маркета. Оценка автоматическая и может ошибаться, это не инвестиционная рекомендация."}},
+        {"@type": "Question", "name": "Сколько стоит Onyx Scanner?",
+         "acceptedAnswer": {"@type": "Answer", "text": "5 часов можно попробовать бесплатно. Дальше 7 дней за 9$, 30 дней за 19$ или доступ навсегда за 59$ (цена запуска для первых 10 покупателей, потом 130$). Оплата в USDT в сети TON прямо в приложении."}},
+        {"@type": "Question", "name": "Бот покупает подарки за меня или просит доступ к кошельку?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Нет. Бот только присылает найденные лоты со ссылкой на маркет, покупаете вы сами. Он никогда не просит seed-фразы, пароли, коды или переводы."}},
+        {"@type": "Question", "name": "Какие маркеты поддерживаются?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Portals и MRKT. Радар следит за новыми листингами и за уже выставленными подарками."}}
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root {
+  color-scheme: dark;
+  --bg: #0b0d12; --card: #141821; --card-2: #1a1f2b; --line: rgba(255,255,255,.07);
+  --text: #f2f4f8; --muted: #9aa3b2; --blue: #2b8ffb; --blue-2: #0a5fd6; --ok: #3fcf8e;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+a { color: var(--blue); }
+.wrap { max-width: 980px; margin: 0 auto; padding: 0 16px; }
+header.top { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+.logo { display: flex; align-items: center; gap: 10px; font-weight: 700; color: var(--text); text-decoration: none; }
+.logo i { width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(145deg, #3aa2ff, var(--blue-2)); box-shadow: 0 4px 16px rgba(43,143,251,.45); }
+.lang { color: var(--muted); font-size: 14px; text-decoration: none; }
+.hero { padding: 48px 0 40px; background: radial-gradient(70% 90% at 85% 0%, rgba(43,143,251,.22), transparent 65%); }
+h1 { font-size: clamp(32px, 6vw, 54px); line-height: 1.08; letter-spacing: -.03em; margin: 0 0 16px; }
+.lead { font-size: clamp(17px, 2.4vw, 20px); color: var(--muted); max-width: 640px; margin: 0 0 28px; }
+.cta { display: inline-flex; align-items: center; gap: 10px; padding: 15px 26px; border-radius: 16px; font-weight: 650; font-size: 17px;
+  color: #fff; text-decoration: none; background: linear-gradient(135deg, var(--blue), var(--blue-2)); box-shadow: 0 10px 30px rgba(10,95,214,.35); }
+.cta:hover { filter: brightness(1.08); }
+.cta-note { display: block; margin-top: 12px; color: var(--muted); font-size: 14px; }
+.facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 36px; }
+.fact { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 16px; }
+.fact b { display: block; font-size: 26px; letter-spacing: -.02em; }
+.fact span { color: var(--muted); font-size: 14px; }
+section { padding: 44px 0; border-top: 1px solid var(--line); }
+h2 { font-size: clamp(24px, 4vw, 34px); letter-spacing: -.02em; margin: 0 0 20px; line-height: 1.15; }
+h3 { font-size: 18px; margin: 0 0 6px; }
+.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 20px; }
+.card p { margin: 0; color: var(--muted); }
+ol.steps { list-style: none; counter-reset: s; padding: 0; margin: 0; display: grid; gap: 12px; }
+ol.steps li { counter-increment: s; display: flex; gap: 14px; background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 16px 18px; }
+ol.steps li::before { content: counter(s); flex: none; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center;
+  font-weight: 700; background: rgba(43,143,251,.15); color: var(--blue); }
+ol.steps p { margin: 2px 0 0; color: var(--muted); }
+.alert { background: var(--card-2); border: 1px solid var(--line); border-radius: 18px; padding: 18px; max-width: 460px; font-size: 15px; }
+.alert .t { font-weight: 650; }
+.alert .p { color: var(--ok); font-weight: 650; }
+.alert small { color: var(--muted); }
+.plans { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.plan { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 18px; }
+.plan.pop { border-color: var(--blue); background: linear-gradient(135deg, rgba(43,143,251,.14), rgba(10,95,214,.04)), var(--card); }
+.plan b { display: block; font-size: 30px; letter-spacing: -.02em; margin: 4px 0; }
+.plan s { color: var(--muted); font-size: 15px; margin-left: 6px; }
+.plan span { color: var(--muted); font-size: 14px; }
+.tag { display: inline-block; font-size: 12px; font-weight: 650; color: #fff; background: var(--blue); border-radius: 10px; padding: 1px 8px; margin-left: 6px; }
+details { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 14px 18px; margin-bottom: 8px; }
+summary { cursor: pointer; font-weight: 600; }
+details p { color: var(--muted); margin: 10px 0 2px; }
+.en p { color: var(--muted); }
+footer { padding: 30px 0 50px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); }
+@media (max-width: 760px) {
+  .grid, .plans { grid-template-columns: 1fr 1fr; }
+  .facts { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) { .grid, .plans { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="wrap">
+    <header class="top">
+      <a class="logo" href="./"><i></i>Onyx Scanner</a>
+      <a class="lang" href="#en">English</a>
+    </header>
+    <h1>Бот, который находит NFT-подарки Telegram дешевле рынка</h1>
+    <p class="lead">Onyx Scanner круглосуточно сканирует маркеты Portals и MRKT, оценивает каждый лот по реальным продажам той же модели и сразу присылает вам в Telegram подарки, выставленные ниже своей цены.</p>
+    <a class="cta" href="https://t.me/onyxscannerbot?start=site">Открыть @onyxscannerbot →</a>
+    <span class="cta-note">5 часов полного доступа бесплатно, без оплаты и без привязки кошелька.</span>
+    <div class="facts">
+      <div class="fact"><b>124</b><span>коллекции подарков под наблюдением</span></div>
+      <div class="fact"><b>200 000+</b><span>продаж в истории цен для оценки</span></div>
+      <div class="fact"><b>50–150</b><span>выгодных лотов в день</span></div>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+  <section>
+    <h2>Что умеет бот для NFT-подарков</h2>
+    <div class="grid">
+      <div class="card"><h3>Сделки дешевле рынка</h3><p>Радар сравнивает цену каждого листинга с недавними продажами той же модели и фона и считает прибыль после комиссии маркета.</p></div>
+      <div class="card"><h3>Ваши фильтры</h3><p>Коллекции, модели, фоны, символы, монохромы, диапазон цены и минимальная прибыль. Приходит только то, что вам подходит.</p></div>
+      <div class="card"><h3>Снайпы</h3><p>Укажите конкретный подарок и цену, и бот напишет, как только его выставят не дороже, и когда его продадут.</p></div>
+      <div class="card"><h3>Флор и владельцы</h3><p>Флор модели на каждом маркете, недавние продажи, владелец подарка и его история, свежие апгрейды.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Как это выглядит</h2>
+    <div class="alert">
+      <div class="t">Plush Pepe · Pumpkin · Onyx Black</div>
+      <div>Выставлен на Portals: 20 TON</div>
+      <div>Оценка по продажам: 29,4 TON · <span class="p">+38% после комиссии</span></div>
+      <small>Пример формата уведомления. Цифры для иллюстрации.</small>
+    </div>
+  </section>
+
+  <section>
+    <h2>Как начать за минуту</h2>
+    <ol class="steps">
+      <li><div><h3>Откройте бота</h3><p>Напишите <a href="https://t.me/onyxscannerbot?start=site">@onyxscannerbot</a> и нажмите «Попробовать бесплатно».</p></div></li>
+      <li><div><h3>Создайте фильтр</h3><p>Выберите коллекцию, модели и бюджет в мини-приложении.</p></div></li>
+      <li><div><h3>Получайте сделки</h3><p>Бот пишет в Telegram, как только подходящий подарок выставят дешевле рынка. Покупаете вы сами на маркете.</p></div></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Цены</h2>
+    <div class="plans">
+      <div class="plan"><span>Пробный доступ</span><b>0$</b><span>5 часов, всё включено</span></div>
+      <div class="plan"><span>7 дней</span><b>9$</b><span>чтобы проверить на своих сделках</span></div>
+      <div class="plan pop"><span>30 дней <em class="tag">Популярный</em></span><b>19$</b><span>0,63$ в день</span></div>
+      <div class="plan"><span>Навсегда</span><b>59$<s>130$</s></b><span>цена запуска для первых 10 покупателей</span></div>
+    </div>
+    <p style="color:var(--muted)">Оплата в USDT в сети TON прямо в мини-приложении. Доступ открывается автоматически, как только платёж дойдёт.</p>
+  </section>
+
+  <section>
+    <h2>Частые вопросы</h2>
+    <details><summary>Какой бот подойдёт для поиска выгодных NFT-подарков в Telegram?</summary><p>Onyx Scanner (@onyxscannerbot) круглосуточно сканирует Portals и MRKT, оценивает каждый лот по реальным продажам той же модели и присылает подарки, выставленные дешевле рынка, по вашим фильтрам.</p></details>
+    <details><summary>Как бот оценивает подарок?</summary><p>По недавним продажам и листингам той же коллекции и модели, с учётом фона и комиссии маркета. Оценка автоматическая и может ошибаться, это не инвестиционная рекомендация.</p></details>
+    <details><summary>Сколько стоит?</summary><p>5 часов бесплатно. Дальше 7 дней за 9$, 30 дней за 19$ или навсегда за 59$ (цена запуска для первых 10 покупателей, потом 130$).</p></details>
+    <details><summary>Бот покупает за меня или просит доступ к кошельку?</summary><p>Нет. Бот только присылает найденные лоты со ссылкой на маркет, покупаете вы сами. Он никогда не просит seed-фразы, пароли, коды или переводы.</p></details>
+    <details><summary>Какие маркеты поддерживаются?</summary><p>Portals и MRKT: и новые листинги, и уже выставленные подарки.</p></details>
+    <details><summary>Куда писать с вопросами?</summary><p><a href="https://t.me/onyxxxceo">@onyxxxceo</a>.</p></details>
+  </section>
+
+  <section id="en" class="en" lang="en">
+    <h2>Onyx Scanner in English</h2>
+    <p>Onyx Scanner (<a href="https://t.me/onyxscannerbot?start=site">@onyxscannerbot</a>) is a Telegram bot and mini app for Telegram NFT gift traders. It scans the Portals and MRKT gift markets around the clock, values every listing by real sales of the same model and backdrop, and messages you when a gift that matches your filters is listed below its value, with the profit after fees.</p>
+    <p>Filters by collection, model, backdrop, symbol and price, gift snipes, floors on each market, owners and new upgrades. Try it free for 5 hours; then 7 days for $9, 30 days for $19 or lifetime for $59 (launch price). Pay in USDT on TON inside the app. The bot never buys for you and never asks for seed phrases, passwords or transfers.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    Onyx Scanner · <a href="https://t.me/onyxscannerbot?start=site">@onyxscannerbot</a> · вопросы: <a href="https://t.me/onyxxxceo">@onyxxxceo</a><br>
+    Не связан с Telegram, Fragment, Portals и MRKT. Оценки автоматические и могут ошибаться, это не инвестиционная рекомендация. 18+.
+  </div>
+</footer>
+</body>
+</html>
