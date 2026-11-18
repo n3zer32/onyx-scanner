@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/onyx-banner.gif" alt="Onyx Scanner — бот для поиска выгодных NFT-подарков Telegram" width="560">
+<img src="assets/onyx-banner.gif" alt="Onyx Scanner: бот для поиска выгодных NFT-подарков Telegram" width="560">
 
 # Onyx Scanner
 
@@ -12,7 +12,7 @@
 
 ---
 
-**Onyx Scanner** ([@onyxscannerbot](https://t.me/onyxscannerbot?start=github)) — Telegram-бот и мини-приложение для тех, кто торгует NFT-подарками. Он круглосуточно сканирует маркеты **Portals** и **MRKT**, оценивает каждый лот по реальным продажам той же модели и сразу присылает в Telegram подарки, которые выставили ниже их цены.
+**Onyx Scanner** ([@onyxscannerbot](https://t.me/onyxscannerbot?start=github)) это Telegram-бот и мини-приложение для тех, кто торгует NFT-подарками. Он круглосуточно сканирует маркеты **Portals** и **MRKT**, оценивает каждый лот по реальным продажам той же модели и сразу присылает в Telegram подарки, которые выставили ниже их цены.
 
 <p align="center"><img src="assets/app-deals.webp" alt="Мини-приложение Onyx Scanner: лента сделок с NFT-подарками дешевле рынка" width="300"></p>
 

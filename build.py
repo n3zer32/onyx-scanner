@@ -23,13 +23,13 @@ ICONS = [
 
 RU = {
     "lang": "ru", "locale": "ru_RU", "app_shot": "app-deals.webp", "url": SITE, "root": "", "other_url": "en/", "other_label": "EN", "other_name": "English",
-    "title": "Onyx Scanner — бот для поиска выгодных NFT-подарков Telegram (Portals, MRKT)",
-    "description": ("Onyx Scanner — Telegram-бот и мини-приложение, которое сканирует маркеты NFT-подарков (Portals, MRKT) и "
+    "title": "Onyx Scanner: бот для поиска выгодных NFT-подарков Telegram (Portals, MRKT)",
+    "description": ("Onyx Scanner: Telegram-бот и мини-приложение, которое сканирует маркеты NFT-подарков (Portals, MRKT) и "
                     "присылает подарки, выставленные дешевле рынка. Фильтры по коллекции, модели, фону и бюджету, снайпы, "
                     "флор и владельцы. 5 часов бесплатно."),
     "keywords": ("бот для NFT подарков, NFT подарки Telegram, сканер подарков телеграм, флип подарков, перепродажа подарков "
                  "Telegram, Portals, MRKT, флор подарков, снайпер подарков, Telegram gifts bot"),
-    "og_title": "Onyx Scanner — бот для поиска выгодных NFT-подарков Telegram",
+    "og_title": "Onyx Scanner: бот для поиска выгодных NFT-подарков Telegram",
     "og_desc": "Сканирует Portals и MRKT и присылает подарки, выставленные дешевле рынка. 5 часов бесплатно.",
     "nav": ["Возможности", "Цены", "Вопросы"], "open_tg": "Открыть в Telegram",
     "h1": "Бот, который находит NFT-подарки Telegram дешевле рынка",
@@ -83,13 +83,13 @@ RU = {
 
 EN = {
     "lang": "en", "locale": "en_US", "app_shot": "app-deals-en.webp", "url": SITE + "en/", "root": "../", "other_url": "../", "other_label": "RU", "other_name": "Русский",
-    "title": "Onyx Scanner — Telegram NFT gift scanner bot: gifts below market on Portals and MRKT",
+    "title": "Onyx Scanner: Telegram NFT gift scanner bot for gifts below market on Portals and MRKT",
     "description": ("Onyx Scanner is a Telegram bot and mini app that scans the Telegram NFT gift markets (Portals, MRKT) and "
                     "alerts you to gifts listed below their value. Filters by collection, model, backdrop and budget, snipes, "
                     "floors and owners. 5 hours free."),
     "keywords": ("Telegram NFT gifts bot, Telegram gift scanner, gift flipping, Telegram gifts below floor, Portals, MRKT, "
                  "gift sniper, Telegram gift floor price, NFT gift alerts"),
-    "og_title": "Onyx Scanner — find Telegram NFT gifts below market",
+    "og_title": "Onyx Scanner: find Telegram NFT gifts below market",
     "og_desc": "Scans Portals and MRKT and alerts you to gifts listed below their value. 5 hours free.",
     "nav": ["Features", "Pricing", "FAQ"], "open_tg": "Open in Telegram",
     "h1": "The bot that finds Telegram NFT gifts below market",
