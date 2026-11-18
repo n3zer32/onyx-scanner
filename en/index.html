@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Onyx Scanner — Telegram NFT gift scanner bot: gifts below market on Portals and MRKT</title>
+<meta name="description" content="Onyx Scanner is a Telegram bot and mini app that scans the Telegram NFT gift markets (Portals, MRKT) and alerts you to gifts listed below their value. Filters by collection, model, backdrop and budget, snipes, floors and owners. 5 hours free.">
+<meta name="keywords" content="Telegram NFT gifts bot, Telegram gift scanner, gift flipping, Telegram gifts below floor, Portals, MRKT, gift sniper, Telegram gift floor price, NFT gift alerts">
+<link rel="canonical" href="https://n3zer32.github.io/onyx-scanner/en/">
+<link rel="alternate" hreflang="ru" href="https://n3zer32.github.io/onyx-scanner/">
+<link rel="alternate" hreflang="en" href="https://n3zer32.github.io/onyx-scanner/en/">
+<link rel="alternate" hreflang="x-default" href="https://n3zer32.github.io/onyx-scanner/">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#08090a">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Onyx Scanner">
+<meta property="og:title" content="Onyx Scanner — find Telegram NFT gifts below market">
+<meta property="og:description" content="Scans Portals and MRKT and alerts you to gifts listed below their value. 5 hours free.">
+<meta property="og:url" content="https://n3zer32.github.io/onyx-scanner/en/">
+<meta property="og:image" content="https://n3zer32.github.io/onyx-scanner/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Onyx Scanner — find Telegram NFT gifts below market">
+<meta name="twitter:description" content="Scans Portals and MRKT and alerts you to gifts listed below their value. 5 hours free.">
+<meta name="twitter:image" content="https://n3zer32.github.io/onyx-scanner/og.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Onyx Scanner",
+      "alternateName": [
+        "@onyxscannerbot",
+        "ONYX Scanner",
+        "Оникс Сканер"
+      ],
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Telegram",
+      "url": "https://t.me/onyxscannerbot",
+      "image": "https://n3zer32.github.io/onyx-scanner/assets/onyx-logo.png",
+      "description": "A Telegram bot and mini app that finds Telegram NFT gifts listed below market on Portals and MRKT.",
+      "inLanguage": "en",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Free trial, 5 hours",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "7 days",
+          "price": "9",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "30 days",
+          "price": "19",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Lifetime",
+          "price": "59",
+          "priceCurrency": "USD"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which bot finds profitable Telegram NFT gifts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Onyx Scanner (@onyxscannerbot) scans Portals and MRKT around the clock, values every listing by real sales of the same model and sends you gifts listed below market that match your filters."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the bot value a gift?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "From recent sales and listings of the same collection and model, accounting for the backdrop and the market fee. Values are automatic and can be wrong; this is not investment advice."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does it cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "5 hours free. Then $9 for 7 days, $19 for 30 days or $59 lifetime (launch price for the first 10 buyers, then $130)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the bot buy for me or ask for my wallet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The bot only sends listings with a link to the market; you buy yourself. It never asks for seed phrases, passwords, codes or transfers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which markets are supported?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Portals and MRKT: new listings and gifts already listed."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <a class="brand" href="./"><img src="../assets/mascot-128.png" alt="" width="24" height="24">Onyx Scanner</a>
+    <div class="links">
+      <a class="nav-sec" href="#features">Features</a>
+      <a class="nav-sec" href="#pricing">Pricing</a>
+      <a class="nav-sec" href="#faq">FAQ</a>
+      <a class="lang-btn" href="../" hreflang="ru" lang="ru" title="Русский"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z"/></svg>RU</a>
+      <a class="btn-tg" href="https://t.me/onyxscannerbot?start=site"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1.1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.2 13 1.4 11.5c-1-.3-1.1-1 .2-1.5l18.9-7.3c.9-.3 1.6.2 1.4 1.6Z"/></svg><span class="hide-sm">Open in Telegram</span><span class="show-sm">Telegram</span></a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>The bot that finds Telegram NFT gifts below market</h1>
+    <div class="sub">
+      <p>Onyx Scanner scans Portals and MRKT around the clock and sends you gifts listed below their value.</p>
+      <a class="new" href="#pricing"><b>New</b>Plans from $9 →</a>
+    </div>
+    <div class="hero-cta">
+      <a class="btn-tg lg" href="https://t.me/onyxscannerbot?start=site"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1.1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.2 13 1.4 11.5c-1-.3-1.1-1 .2-1.5l18.9-7.3c.9-.3 1.6.2 1.4 1.6Z"/></svg>Open @onyxscannerbot</a>
+      <span>5 hours free</span>
+    </div>
+
+    <div class="stage">
+      <div class="float-card left" aria-hidden="true">
+        <div class="fc-head"><img src="../assets/mascot-128.png" alt=""><b>Onyx Scanner</b> bot · now</div>
+        <div class="fc-gift"><img src="../assets/gift-hexpot.webp" alt=""><div><b>Hex Pot #57082</b><small>Fire Storm · Aquamarine</small></div></div>
+        <div class="fc-rows">
+          <div><span>Portals</span><span>40 TON</span></div>
+          <div><span>Value from sales</span><span>55 TON</span></div>
+          <div><span>Profit after fees</span><span class="p">+30.6%</span></div>
+        </div>
+        <div class="fc-btns"><span>Open listing</span><span>Sales</span></div>
+      </div>
+      <div class="phone">
+        <div class="screen">
+          <div class="island"></div>
+          <div class="status"><span>9:41</span><i></i></div>
+          <div class="tgbar"><span>Close</span><b>Onyx Scanner<small>mini app</small></b><span>···</span></div>
+          <img src="../assets/app-deals-en.webp" alt="Onyx Scanner mini app: a feed of Telegram NFT gifts listed below market" width="390" height="844">
+        </div>
+      </div>
+      <div class="float-card right" aria-hidden="true"><div class="fc-list"><div>Scans 24/7</div><div>Portals and MRKT</div><div>Valued by real sales</div><div>Your filters and budget</div></div></div>
+    </div>
+    <div class="cap">The real mini app and real deals from the last 24 hours.</div>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap">
+      <div class="kicker">How it works</div>
+      <p class="statement">The radar values every listing by real sales of the same model. <span>It compares the price with recent deals, accounts for the backdrop and the market fee, and messages you before someone else buys it.</span></p>
+      <div class="stats"><div class="stat"><b>124</b><span>collections watched</span></div><div class="stat"><b>200,000+</b><span>sales in the price history</span></div><div class="stat"><b>50–150</b><span>profitable listings a day</span></div></div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="wrap">
+      <h2>Everything for gift flipping in one bot</h2>
+      <p class="lead">Deals, snipes and market data arrive right in Telegram.</p>
+      <div class="feat"><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg><h3>Deals below market</h3><p>Each listing is compared with recent sales of the same model and backdrop. Profit is shown after fees.</p></div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16l-6 7v6l-4 2v-8z"/></svg><h3>Your filters</h3><p>Collections, models, backdrops, symbols, monochromes, price range and minimum profit.</p></div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg><h3>Snipes</h3><p>Pick a gift and your price: the bot tells you the moment it's listed, and when it sells.</p></div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><h3>Floors and owners</h3><p>The model's floor on each market, recent sales, the gift's owner and fresh upgrades.</p></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Start in a minute</h2>
+      <p class="lead">No wallet to connect, nothing to set up on the markets.</p>
+      <div class="steps"><div><em>01</em><h3>Open the bot</h3><p>Message @onyxscannerbot and tap “Try it free”.</p></div><div><em>02</em><h3>Create a filter</h3><p>Pick a collection, models and your budget in the mini app.</p></div><div><em>03</em><h3>Get deals</h3><p>The bot messages you as soon as a matching gift is listed below market. You buy it yourself.</p></div></div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="wrap">
+      <h2>Pricing</h2>
+      <p class="lead">Start free. Pay only if the bot brings you deals.</p>
+      <div class="plans"><div class="plan"><div class="n">Free trial</div><b>$0</b><span>5 hours, everything included</span></div><div class="plan"><div class="n">7 days</div><b>$9</b><span>try it on your own deals</span></div><div class="plan pop"><div class="n">30 days <em>Popular</em></div><b>$19</b><span>$0.63 a day</span></div><div class="plan"><div class="n">Lifetime</div><b>$59<s>$130</s></b><span>launch price for the first 10 buyers</span></div></div>
+      <p class="note">Pay in USDT on the TON network right in the mini app. Access opens automatically.</p>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <h2>FAQ</h2>
+      <p class="lead">Didn't find your answer? Message <a href="https://t.me/onyxxxceo" style="color:var(--text)">@onyxxxceo</a>.</p>
+      <div class="faq"><details><summary>Which bot finds profitable Telegram NFT gifts?</summary><p>Onyx Scanner (@onyxscannerbot) scans Portals and MRKT around the clock, values every listing by real sales of the same model and sends you gifts listed below market that match your filters.</p></details><details><summary>How does the bot value a gift?</summary><p>From recent sales and listings of the same collection and model, accounting for the backdrop and the market fee. Values are automatic and can be wrong; this is not investment advice.</p></details><details><summary>How much does it cost?</summary><p>5 hours free. Then $9 for 7 days, $19 for 30 days or $59 lifetime (launch price for the first 10 buyers, then $130).</p></details><details><summary>Does the bot buy for me or ask for my wallet?</summary><p>No. The bot only sends listings with a link to the market; you buy yourself. It never asks for seed phrases, passwords, codes or transfers.</p></details><details><summary>Which markets are supported?</summary><p>Portals and MRKT: new listings and gifts already listed.</p></details></div>
+    </div>
+  </section>
+
+  <div class="end">
+    <div class="wrap">
+      <img src="../assets/mascot-hero.png" alt="Onyx, the Onyx Scanner mascot" width="300" height="209">
+      <h2>Try it free for 5 hours</h2>
+      <p>No payment, no wallet to connect.</p>
+      <a class="btn-tg lg" href="https://t.me/onyxscannerbot?start=site"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1.1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.2 13 1.4 11.5c-1-.3-1.1-1 .2-1.5l18.9-7.3c.9-.3 1.6.2 1.4 1.6Z"/></svg>Open in Telegram</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="brand" href="./"><img src="../assets/mascot-128.png" alt="" width="24" height="24">Onyx Scanner</a>
+      <p class="legal">Not affiliated with Telegram, Fragment, Portals or MRKT. Values are automatic and can be wrong; not investment advice. 18+.</p>
+    </div>
+    <div><h4>Product</h4><ul><li><a href="https://t.me/onyxscannerbot?start=site">Telegram bot</a></li><li><a href="#features">Features</a></li><li><a href="#pricing">Pricing</a></li></ul></div>
+    <div><h4>More</h4><ul><li><a href="https://t.me/onyxxxceo">Support</a></li><li><a href="https://github.com/n3zer32/onyx-scanner">GitHub</a></li><li><a href="../" hreflang="ru">Русский</a></li></ul></div>
+  </div>
+</footer>
+</body>
+</html>

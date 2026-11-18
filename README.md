@@ -14,6 +14,8 @@
 
 **Onyx Scanner** ([@onyxscannerbot](https://t.me/onyxscannerbot?start=github)) — Telegram-бот и мини-приложение для тех, кто торгует NFT-подарками. Он круглосуточно сканирует маркеты **Portals** и **MRKT**, оценивает каждый лот по реальным продажам той же модели и сразу присылает в Telegram подарки, которые выставили ниже их цены.
 
+<p align="center"><img src="assets/app-deals.webp" alt="Мини-приложение Onyx Scanner: лента сделок с NFT-подарками дешевле рынка" width="300"></p>
+
 ## Возможности
 
 | | |
@@ -80,7 +82,7 @@ The bot never buys for you and never asks for seed phrases, passwords or transfe
 
 <div align="center">
 
-[Open the bot](https://t.me/onyxscannerbot?start=github) · [Website](https://n3zer32.github.io/onyx-scanner/) · [Support](https://t.me/onyxxxceo)
+[Open the bot](https://t.me/onyxscannerbot?start=github) · [Website](https://n3zer32.github.io/onyx-scanner/en/) · [Support](https://t.me/onyxxxceo)
 
 <sub>Not affiliated with Telegram, Fragment, Portals or MRKT. Values are automatic and can be wrong; not investment advice.</sub>
 
